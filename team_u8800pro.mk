@@ -1,3 +1,5 @@
+# Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2012 The SuperTeam Developer Group
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +14,11 @@
 # limitations under the License.
 
 
-# Inherit from those products. Most specific first.
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/small_base.mk)
 
+
+$(call inherit-product, vendor/SuperTeam/products/common_full.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/huawei/u8800pro/overlay
 
@@ -22,8 +26,6 @@ DEVICE_PACKAGE_OVERLAYS := device/huawei/u8800pro/overlay
 PRODUCT_NAME := team_u8800pro
 PRODUCT_DEVICE := u8800pro
 PRODUCT_MODEL := huawei u8800pro
-
-$(call inherit-product, vendor/SuperTeam/products/common_full.mk)
 
 PRODUCT_PACKAGES += \
     overlay.default \
