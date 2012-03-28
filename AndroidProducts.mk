@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_u8800pro.mk
+    $(LOCAL_DIR)/team_u8800pro.mk

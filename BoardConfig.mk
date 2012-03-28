@@ -128,5 +128,6 @@ BOARD_RECOVERY_RMT_STORAGE := true
 TARGET_RECOVERY_INITRC := device/huawei/u8800pro/recovery.rc
 BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
 
+TARGET_NO_RECOVERY := true
 
 
