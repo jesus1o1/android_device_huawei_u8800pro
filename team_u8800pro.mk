@@ -22,10 +22,12 @@ $(call inherit-product, vendor/SuperTeam/products/common_full.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/huawei/u8800pro/overlay
 
-# Discard inherited values and use our own instead.
 PRODUCT_NAME := team_u8800pro
 PRODUCT_DEVICE := u8800pro
 PRODUCT_MODEL := huawei u8800pro
+PRODUCT_MANUFACTURER := Huawei
+BUILD_FINGERPRINT := Huawei/U8800Pro/hwu8800Pro:2.3.5/HuaweiU8800Pro/C00B540G001:user/ota-rel-keys,release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=GRI40 BUILD_DISPLAY_ID=GWK74 PRODUCT_NAME=U880Pro BUILD_FINGERPRINT=Huawei/U8800Pro/hwu8800Pro:2.3.5/HuaweiU8800Pro/C00B540G001:user/ota-rel-keys,release-keys TARGET_BUILD_TYPE=userdebug BUILD_VERSION_TAGS=ota-rel-keys,release-keys PRIVATE_BUILD_DESC="U8800Pro-user 2.3.5 HuaweiU8800Pro C00B540G001 ota-rel-keys,release-keys"
 
 PRODUCT_PACKAGES += \
     overlay.default \
