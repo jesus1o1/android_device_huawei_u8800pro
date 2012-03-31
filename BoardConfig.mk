@@ -27,12 +27,14 @@ USE_CAMERA_STUB := true
 #BOARD_USE_FROYO_LIBCAMERA := true
 #BOARD_USE_CAF_LIBCAMERA := false
 
+BOARD_USES_ALSA_AUDIO := true
+
 BOARD_NO_RGBX_8888 := true
 BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 TARGET_NO_BOOTLOADER := true
 
-TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
+
 
 TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -111,23 +113,5 @@ WIFI_DRIVER_MODULE_NAME     :=  "dhd"
 WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/wifi/firmware.bin nvram_path=/system/wifi/nvram.txt"
 
 
-# Recovery
-BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_USES_MMCUTILS := true
-#TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/recovery_kernel
-# add for chinese recovery by geno
-BOARD_USES_RECOVERY_CHINESE := true
-ifeq ($(BOARD_USES_RECOVERY_CHINESE),true)
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/huawei/u8800pro/recovery/recovery_ui_cn.c
-else
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/huawei/u8800pro/recovery/recovery_ui_en.c
-endif
-BOARD_HAS_JANKY_BACKBUFFER := true
-BOARD_RECOVERY_CHARGEMODE := true
-BOARD_RECOVERY_RMT_STORAGE := true
-TARGET_RECOVERY_INITRC := device/huawei/u8800pro/recovery.rc
-BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
-
-TARGET_NO_RECOVERY := true
 
 

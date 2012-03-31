@@ -20,6 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/small_base.mk)
 
 $(call inherit-product, vendor/SuperTeam/products/common_full.mk)
 
+$(call inherit-product, vendor/huawei/u8800pro/u8800pro-vendor-blobs.mk)
+
 DEVICE_PACKAGE_OVERLAYS := device/huawei/u8800pro/overlay
 
 PRODUCT_NAME := team_u8800pro
