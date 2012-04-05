@@ -20,7 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/small_base.mk)
 
 $(call inherit-product, vendor/SuperTeam/products/common_full.mk)
 
-$(call inherit-product, vendor/huawei/u8800pro/u8800pro-vendor-blobs.mk)
+$(call inherit-product, vendor/SuperTeam/products/bcm_fm_radio.mk)
+
+$(call inherit-product, vendor/huawei/u8800pro/u8800pro-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/huawei/u8800pro/overlay
 
@@ -41,6 +43,10 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     dexpreopt \
+    DSPManager \
+    hcitool \
+    FM \
+    Torch
 
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/huawei/u8800pro/u8800pro-vendor.mk)
@@ -70,17 +76,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/u8800pro/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
     device/huawei/u8800pro/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/huawei/u8800pro/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    device/huawei/u8800pro/media_profiles.xml:system/etc/media_profiles.xml
-
-# vidc firmware
-PRODUCT_COPY_FILES += \
-    device/huawei/u8800pro/firmware/vidc_720p_command_control.fw:/system/etc/firmware/vidc_720p_command_control.fw \
-    device/huawei/u8800pro/firmware/vidc_720p_h263_dec_mc.fw:/system/etc/firmware/vidc_720p_h263_dec_mc.fw \
-    device/huawei/u8800pro/firmware/vidc_720p_h264_dec_mc.fw:/system/etc/firmware/vidc_720p_h264_dec_mc.fw \
-    device/huawei/u8800pro/firmware/vidc_720p_h264_enc_mc.fw:/system/etc/firmware/vidc_720p_h264_enc_mc.fw \
-    device/huawei/u8800pro/firmware/vidc_720p_mp4_dec_mc.fw:/system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
-    device/huawei/u8800pro/firmware/vidc_720p_mp4_enc_mc.fw:/system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-    device/huawei/u8800pro/firmware/vidc_720p_vc1_dec_mc.fw:/system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
